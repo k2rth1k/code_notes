@@ -1,0 +1,18 @@
+syntax="proto3";
+package proto;
+
+import "google/protobuf/timestamp.proto";
+import "google/api/annotations.proto";
+
+service Algorithms{
+    rpc HelloWorld(EmptyMessage) returns (EmptyMessage){
+        option(google.api.http)={
+            post:"/v1/code_notes/hello-world"
+            body:"*"
+        };
+    }
+}
+
+message EmptyMessage{
+
+}
